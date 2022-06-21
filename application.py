@@ -350,30 +350,25 @@ application = Flask(__name__)
 
 application.config['SECRET_KEY'] = '51f5fbc2a979ae38655fdb65d9180e19'
 
-# @app.route("/")
-# @app.route("/home")
-# def home():
-#     return render_template('home.html', posts=posts)
 
-# @application.route("/result",methods=['POST','GET'])
-# def result():
-#     inputs = request.form.to_dict()
+@application.route("/result",methods=['POST','GET'])
+def result():
+    inputs = request.form.to_dict()
 
-#     input1 = inputs["input1"]
-#     input2 = inputs["input2"]
+    input1 = inputs["input1"]
+    input2 = inputs["input2"]
 
-#     result= testing(input1,input2)
-#     result1= testingDATA(input1,input2)
-#     result2= testingN(input1,input2)
-#     result3= testingDATA1(input1,input2)
-#     result4= testingDATA2(input1,input2)
+    result= testing(input1,input2)
+    result1= testingDATA(input1,input2)
+    result2= testingN(input1,input2)
+    result3= testingDATA1(input1,input2)
+    result4= testingDATA2(input1,input2)
 
-#     return render_template('input.html',result = result,result1= result1,result2 = result2,result3 = result3,result4 = result4, title='result')
+    return render_template('input.html',result = result,result1= result1,result2 = result2,result3 = result3,result4 = result4, title='result')
 
 @application.route("/", methods=['GET','POST'])
 def generate():
-    # return render_template('input.html', title='Generate')
-    return 'Hello'
+    return render_template('input.html', title='Generate')
 
-if __name__ == '__main__':
-    application.run(debug=True)    
+# if __name__ == '__main__':
+#     application.run(debug=True)    
