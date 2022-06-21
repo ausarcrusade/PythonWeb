@@ -372,7 +372,8 @@ application.config['SECRET_KEY'] = '51f5fbc2a979ae38655fdb65d9180e19'
 
 @application.route("/", methods=['GET','POST'])
 def generate():
-    return render_template('input.html', title='Generate')
+    # return render_template('input.html', title='Generate')
+    return 'Hello'
 
 if __name__ == '__main__':
     application.run(debug=True)    
